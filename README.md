@@ -2,9 +2,10 @@
  
 A simple console CBT App.
 
-USAGE:
+### USAGE:
+````python
 pip install pyttsx3
-
+````
 Supports macOS, Linux and Windows. 
 
 FEATURES:
