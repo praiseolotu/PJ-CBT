@@ -4,7 +4,10 @@ A simple console CBT App.
 
 ### USAGE:
 ````python
-pip install pyttsx3
+git clone https://github.com/praiseolotu/PJ-CBT.git
+pip install -r requirements.txt
+python multiQuestion.py
+
 ````
 Supports macOS, Linux and Windows. 
 
