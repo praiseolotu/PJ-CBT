@@ -33,7 +33,7 @@ mult_question = [
 
 
 # run_test takes questions as input. Note it is not the same question array as before
-def run_test(questions):
+def run_test(questions, time_limit):
     score = 0
     for each_question in questions:
         begin = time()
@@ -44,7 +44,7 @@ def run_test(questions):
             score += 1
         end = time()
         diff = end - begin
-        if end >= diff:
+        if diff >= time_limit:
             print('ending session')
             break
     print("You got " + str(score) + "/" + str(len(questions)) + " Correct")
