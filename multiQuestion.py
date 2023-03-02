@@ -77,7 +77,8 @@ else:
     exit()
 
 start = time()
-CBTtimer(mult_question)
+time_limit = 60
+CBTtimer(mult_question, time_limit)
 stop = time()
 end = datetime.now()
 end_time = end.strftime("%H:%M:%S %p")
