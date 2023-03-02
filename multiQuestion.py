@@ -35,16 +35,17 @@ mult_question = [
 # run_test takes questions as input. Note it is not the same question array as before
 def run_test(questions, time_limit):
     score = 0
-    for each_question in questions
-		begin_time = time.time()
+    for each_question in questions:
+
+	begin_time = time.time()
         #engine.say(each_question.prompt)
         #engine.runAndWait()
         answer = input(each_question.prompt)
         if answer == each_question.answer:
             score += 1
-		endthe_time = time.time()
+	endthe_time = time.time()
         elasped_time = endthe_time - begin_time
-		if elasped_time > time_limit:
+	if elasped_time > time_limit:
             print("thank you for your time.")
             break 
 
