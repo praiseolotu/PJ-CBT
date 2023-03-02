@@ -1,9 +1,7 @@
-import pyttsx3
 from Question import Question
 from datetime import datetime
 import time
 from time import *
-engine = pyttsx3.init()
 # Array of questions to ask players
 question_prompt = [
     "Where is Lambogini made? (a) Germany\n (b) Italy\n (c) Nigeria\n\n",
@@ -17,7 +15,6 @@ question_prompt = [
     "Which of the following is a name of a continent? (a) South America\n (b) Niger\n (c) Spain\n\n",
     "_____ is the name of a continent and a country? (a) United States\n (b) Australia\n (c) Europe\n\n"
 ]
-# Array that contains instances of Question class and question prompt and the answer
 mult_question = [
     Question(question_prompt[0], "b"),
     Question(question_prompt[1], "b"),
@@ -32,15 +29,19 @@ mult_question = [
 ]
 
 
-# run_test takes questions as input. Note it is not the same question array as before
-def run_test(questions):
+def CBTtimer(question_prompt, time_limit):
     score = 0
-    for each_question in questions:
-        engine.say(each_question.prompt)
-        engine.runAndWait()
+    for each_question in question_prompt:
+	begin_time = time.time()
         answer = input(each_question.prompt)
         if answer == each_question.answer:
             score += 1
+	endthe_time = time.time()
+        elasped_time = endthe_time - begin_time
+	if elasped_time > time_limit:
+            print("thank you for your time.")
+            break 
+
     print("You got " + str(score) + "/" + str(len(questions)) + " Correct")
     if score == 0:
         print("\nYour Grade: F")
@@ -56,7 +57,6 @@ def run_test(questions):
         print("\nYour Grade: A")
 
 
-# pass our questions array into run_test function
 now = datetime.now()
 current_time = now. strftime("%H:%M:%S %p")
 print("You started the CBT at ", current_time, "\n\n")
@@ -77,7 +77,7 @@ else:
     exit()
 
 start = time()
-run_test(mult_question)
+CBTtimer(mult_question)
 stop = time()
 end = datetime.now()
 end_time = end.strftime("%H:%M:%S %p")
