@@ -36,11 +36,17 @@ mult_question = [
 def run_test(questions):
     score = 0
     for each_question in questions:
+        begin = time()
         engine.say(each_question.prompt)
         engine.runAndWait()
         answer = input(each_question.prompt)
         if answer == each_question.answer:
             score += 1
+        end = time()
+        diff = end - begin
+        if end >= diff:
+            print('ending session')
+            break
     print("You got " + str(score) + "/" + str(len(questions)) + " Correct")
     if score == 0:
         print("\nYour Grade: F")
@@ -77,7 +83,8 @@ else:
     exit()
 
 start = time()
-run_test(mult_question)
+time_limit = 60
+run_test(mult_question, time_limit)
 stop = time()
 end = datetime.now()
 end_time = end.strftime("%H:%M:%S %p")
