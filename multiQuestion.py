@@ -43,8 +43,8 @@ def run_test(questions):
     for each_question in questions:
         if not game_on:
             break
-        #engine.say(each_question.prompt)
-        #engine.runAndWait()
+        engine.say(each_question.prompt)
+        engine.runAndWait()
         answer = input(each_question.prompt)
         if answer == each_question.answer:
             score += 1
