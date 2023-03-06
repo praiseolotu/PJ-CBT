@@ -19,6 +19,7 @@ Supports macOS, Linux and Windows.
 5. Automatic grading.
 6. Alerts user when he/she ends the examination. 
 7. Timer to time test session.
+8. Test Administrator can set total time for the test session.
 
 #### Special Thanks
 - [Edun Rilwan](https://github.com/Omotunde2005)
