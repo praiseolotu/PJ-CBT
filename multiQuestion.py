@@ -4,7 +4,7 @@ from datetime import datetime
 import time
 from time import *
 engine = pyttsx3.init()
-engine.setProperty('rate', 150)
+
 
 # Array of questions to ask players
 question_prompt = [
