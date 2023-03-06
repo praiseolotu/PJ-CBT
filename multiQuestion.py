@@ -85,10 +85,18 @@ def is_integer(num, token_number):
 
 # pass our questions array into run_test function
 trials = 3
+alloted_time = 120 # 2 mins
+
+'''
+Alloted time can only be updated by test administrator.
+It uses seconds by default.
+
+'''
+
 now = datetime.now()
 current_time = now. strftime("%H:%M:%S %p")
 print("You started the CBT at ", current_time, "\n\n")
-
+print(f'You will use {alloted_time} seconds for this test\n\n')
 
 # Ask for username
 name = str(input("Enter your name\n"))
