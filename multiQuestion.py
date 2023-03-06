@@ -3,6 +3,8 @@ import pyttsx3
 import threading
 from Question import Question
 from datetime import datetime
+import random
+import string
 from time import *
 
 engine = pyttsx3.init()
@@ -40,6 +42,7 @@ mult_question = [
 
 # run_test takes questions as input. Note it is not the same question array as before
 def run_test(questions):
+    question_number = 1
     score = 0
     for each_question in questions:
         if not game_on:
@@ -71,18 +74,6 @@ def end_quiz():
     game_on = False
     exit()
 
-
-# Function to check if the user input are integers
-def is_integer(num, token_number):
-    try:
-        if int(num) == token_number:
-            pass
-    except ValueError:
-        return False
-    else:
-        return True
-
-
 # pass our questions array into run_test function
 trials = 3
 alloted_time = 120 # 2 mins
@@ -111,7 +102,10 @@ while not branch:
 
 
 # Ask for token number
-token_number = 7756
+token_number = ''
+token_list = [random.choice(list(string.ascii_letters)) for _ in range(10)] + list(str(random.randint(1111, 9999)))
+random.shuffle(token_list)
+token_number = "".join(token_list)
 num = input("Enter Test Token Number\n")
 
 
@@ -124,21 +118,8 @@ while not num:
         exit()
     num = input("Enter Test Token Number\n")
 
-
-# To check if the user entered an integer or string
-while not is_integer(num, token_number):
-    trials -= 1
-    print(f'Token number must contain only integers. You have {trials} trials left')
-    if trials == 0:
-        print('You cannot participate in this exam again. You exceeded maximum trials')
-        exit()
-    num = input("Enter Test Token Number\n")
-    if is_integer(num, token_number):
-        break
-
-
 # To check if user input is equal to the token number
-while int(num) != token_number:
+while num != token_number:
     trials -= 1
     print(f'You entered the wrong token number. {trials} trials left')
     if trials == 0:
@@ -148,7 +129,7 @@ while int(num) != token_number:
 
 
 # Begin Timer
-timer = threading.Timer(20.0, end_quiz)
+timer = threading.Timer(alloted_time, end_quiz)
 timer.start()
 start = time()
 
