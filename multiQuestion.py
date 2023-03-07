@@ -107,6 +107,8 @@ token_number = ''
 token_list = [random.choice(list(string.ascii_letters)) for _ in range(10)] + list(str(random.randint(1111, 9999)))
 random.shuffle(token_list)
 token_number = "".join(token_list)
+print(f'Your test token is {token_number}')
+print('\t Do not share with anyone\n')
 num = input("Enter Test Token Number\n")
 
 
