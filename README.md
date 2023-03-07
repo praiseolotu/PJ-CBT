@@ -24,3 +24,4 @@ Supports macOS, Linux and Windows.
 #### Special Thanks
 - [Edun Rilwan](https://github.com/Omotunde2005)
 - [Ostronic](https://GitHub.com/ostronic)
+- [CodeWizard](https://github.com/chukwuma619)
