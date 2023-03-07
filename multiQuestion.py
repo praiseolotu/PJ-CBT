@@ -8,6 +8,7 @@ import string
 from time import *
 
 engine = pyttsx3.init()
+engine.setProperty('rate', 150)
 game_on = True
 
 # Array of questions to ask players
