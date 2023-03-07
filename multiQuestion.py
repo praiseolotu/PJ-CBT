@@ -5,6 +5,7 @@ from datetime import datetime
 from time import *
 
 engine = pyttsx3.init()
+engine.setProperty('rate', 150)
 game_on = True
 
 # Array of questions to ask players
@@ -84,6 +85,14 @@ def is_integer(num, token_number):
 
 # pass our questions array into run_test function
 trials = 3
+allotted_time = 5 #2 minutes
+
+'''
+Allotted time can only be updated by
+Administrator.
+It uses seconds by default
+
+
 now = datetime.now()
 current_time = now. strftime("%H:%M:%S %p")
 print("You started the CBT at ", current_time, "\n\n")
@@ -139,7 +148,7 @@ while int(num) != token_number:
 
 
 # Begin Timer
-timer = threading.Timer(20.0, end_quiz)
+timer = threading.Timer(allotted time, end_quiz)
 timer.start()
 start = time()
 
